@@ -14,7 +14,6 @@ const allowedOrigins = [
   'capacitor://localhost',
   'http://localhost',
   'http://localhost:8100',
-  'https://mdbackend-ys7z.onrender.com',
   'https://frontend-oficial.onrender.com'
 ];
 
