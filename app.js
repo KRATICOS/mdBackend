@@ -7,14 +7,13 @@ const app = express();
 
 // Lista de orígenes permitidos
 const allowedOrigins = [
-  'capacitor://localhost',
-  'http://localhost',
-  'http://localhost:8100',
-  'https://frontend-oficial.onrender.com'
+  'capacitor://localhost',                  // APK / Capacitor
+  'http://localhost',                        // Desarrollo navegador
+  'http://localhost:8100',                   // Ionic live reload
+  'https://frontend-oficial.onrender.com',   // Frontend en Render
+  'https://mdbackend-ys7z.onrender.com'     // Backend en Render
 ];
 
-
-// Opciones CORS
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -23,13 +22,13 @@ const corsOptions = {
       callback(new Error('No permitido por CORS'));
     }
   },
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true
 };
 
-// Middleware
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
+app.options('*', corsOptions); // Maneja preflight requests
+
 
 app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: true }));
