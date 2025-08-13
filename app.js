@@ -10,9 +10,9 @@ const allowedOrigins = [
   'capacitor://localhost',
   'http://localhost',
   'http://localhost:8100',
-  'https://frontend-materials-dispenser.vercel.app',
-  'https://frontend-md-ytjd.vercel.app' 
+  'https://frontend-oficial.onrender.com'
 ];
+
 
 // Opciones CORS
 const corsOptions = {
@@ -50,6 +50,6 @@ app.use('/api/usuarios', usuarioRoutes);
 app.use('/api/items', itemsRoutes);
 app.use('/api/inventario', inventarioRoutes);
 app.use('/api/historial', historialRoutes);
-app.use('/api/categorias', categoriaRoutes); // ← ✅ NUEVO
+app.use('/api/categorias', categoriaRoutes); 
 
 module.exports = app;
