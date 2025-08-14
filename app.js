@@ -12,8 +12,8 @@ const app = express();
 // Lista de orígenes permitidos
 const allowedOrigins = [
   'capacitor://localhost',
-  'http://localhost',
-  'http://localhost:8100',
+  'https://localhost',
+  'https://localhost:8100',
   'https://frontend-oficial.onrender.com'
 ];
 
