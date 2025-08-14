@@ -16,7 +16,7 @@ exports.registrarEquipoConImagenes = async (req, res) => {
         }
 
         const imagenes = files.map(file => ({
-            url: `http://localhost:3001/uploads/${file.filename}`
+            url: `https://localhost:3001/uploads/${file.filename}`
         }));
 
         const nuevoEquipo = new Inventario({
@@ -107,7 +107,7 @@ exports.actualizarEquipoConImagenes = async (req, res) => {
 
     if (files.length > 0) {
       const nuevasImagenes = files.map(file => ({
-        url: `http://localhost:3001/uploads/${file.filename}`
+        url: `https://localhost:3001/uploads/${file.filename}`
       }));
       equipo.imagenes = equipo.imagenes.concat(nuevasImagenes);
     }
